@@ -37,13 +37,13 @@ ul li a
 ul li a:hover
 {
     background-color: #fff;
-    color: #000; 
+    color: #000;
 }
 
 ul li.active a
 {
     background-color:#fff;
-    color: #000; 
+    color: #000;
 }
 .logo img
 {
@@ -70,6 +70,7 @@ ul li.active a
 {
     color: #fff;
     font-size: 70px;
+    background-image: url('assets/img/background.jpg');
 }
 
 .button
@@ -92,6 +93,5 @@ ul li.active a
 .btn:hover
 {
     background-color: #fff;
-    color: #000; 
+    color: #000;
 }
-

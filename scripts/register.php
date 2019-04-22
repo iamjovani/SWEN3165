@@ -12,8 +12,9 @@ if ($conn->connect_error) {
 } 
 
 // Create database
-$sql = "CREATE DATABASE HotelDB";
-if ($conn->query($sql) === TRUE) {
+$sql = file_get_contents("Hoteldb.sql");
+
+if ($conn->multi_query($sql) === TRUE) {
     echo "Database created successfully";
 } else {
     echo "Error creating database: " . $conn->error;
@@ -30,14 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         $streetna  = $_POST['streetname'];
         $country   = $_POST['country'];
         $streetnu  = $_POST['streetname'];
-    
-        // Create database
-        $sql = "CREATE DATABASE HotelDB";
-        if ($conn->query($sql) === TRUE) {
-            echo "Database created successfully";
-        } else {
-        echo "Error creating database: " . $conn->error;
-        }
     }
 }
 

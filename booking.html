@@ -46,7 +46,7 @@
 									<ul>
 			                            <li><a href="#details" data-toggle="tab">Account</a></li>
 			                            <li><a href="#captain" data-toggle="tab">Room Type</a></li>
-			                            <li><a href="#description" data-toggle="tab">Extra Details</a></li>
+			                            <li><a href="#description" data-toggle="tab">Credit Card Details</a></li>
 			                        </ul>
 								</div>
 
@@ -63,7 +63,7 @@
 													</span>
 													<div class="form-group label-floating">
 			                                          	<label class="control-label">Your Full Name</label>
-			                                          	<input name="name" type="text" class="form-control">
+			                                          	<input name="fullname" type="text" class="form-control">
 			                                        </div>
 												</div>
 
@@ -84,8 +84,6 @@
                                                             <label class="control-label">Number of Children</label>
                                                             <input name="numchldrn" type="number" class="form-control">
                                                     </div>
-                                                    
-                                                   
                                                 </div>
 		                                	</div>
 		                                	<div class="col-sm-6">
@@ -100,15 +98,11 @@
                                                     </div>
                                                     <div class="form-group label-floating">
                                                             <label class="control-label">End Date</label>
-                                                            <input name="startdate" type="date" class="form-control">
+                                                            <input name="enddate" type="date" class="form-control">
                                                     </div>
                                                   
 		                                    	</div>
                                             </div>
-                                            <div class="col-sm-6">
-                                                   
-                                                   
-                                                </div>
 		                            	</div>
 		                            </div>
 		                            <div class="tab-pane" id="captain">
@@ -126,7 +120,7 @@
 		                                        </div>
 		                                        <div class="col-sm-4">
 		                                            <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Select this room if you're traveling with your family.">
-		                                                <input type="radio" name="job" value="Code">
+		                                                <input type="radio" name="suitetype" value="Code">
 		                                                <div class="icon">
 		                                                    <i class="material-icons">home</i>
 		                                                </div>
@@ -157,19 +151,19 @@
 		                            </div>
 		                            <div class="tab-pane" id="description">
 		                                <div class="row">
-		                                    <h4 class="info-text"> Drop us a small description.</h4>
-		                                    <div class="col-sm-6 col-sm-offset-1">
-	                                    		<div class="form-group">
-		                                            <label>Room description</label>
-		                                            <textarea class="form-control" placeholder="" rows="6"></textarea>
-		                                        </div>
-		                                    </div>
 		                                    <div class="col-sm-4">
-		                                    	<div class="form-group">
-		                                            <label class="control-label">Example</label>
-		                                            <p class="description">"More information Loading...."</p>
-		                                        </div>
-		                                    </div>
+													<span class="input-group-addon">
+														<i class="material-icons"><!--icon goes here --></i>
+													</span>
+													<div class="form-group label-floating">
+			                                          	<label class="control-label">Email</label>
+			                                          	<input name="email" type="email" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group label-floating">
+                                                            <label class="control-label">Number of Adults</label>
+                                                            <input name="numadlts" type="number" class="form-control">
+                                                    </div>
 		                                </div>
 		                            </div>
 		                        </div>

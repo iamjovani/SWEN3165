@@ -1,19 +1,20 @@
+DROP DATABASE IF EXISTS HotelDB;
 CREATE DATABASE HotelDB;
 USE HotelDB;
 
 CREATE TABLE CustomerAccount
 (
-    accountid INT AUTO_INCREMENT NOT NULL,
-    firstname VARCHAR(20), 
-    lastname  VARCHAR(20), 
-    email     VARCHAR(20),
-    gender    VARCHAR(6) ,
+    /*accountid INT AUTO_INCREMENT NOT NULL,*/
+    firstname   VARCHAR(20), 
+    lastname    VARCHAR(20), 
+    email       VARCHAR(20),
+    gender      VARCHAR(6) ,
     dateofbirth DATE,
-    username  VARCHAR(30),
-    password  VARCHAR(30),
-    telephone VARCHAR(10),
+    pass        VARCHAR(30),
+    telephone   VARCHAR(10),
     
-    PRIMARY KEY(accountid)
+    /*PRIMARY KEY(accountid)*/
+    PRIMARY KEY(firstname, telephone)
 );
 
 CREATE TABLE Reservation

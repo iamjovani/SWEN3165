@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         $enddate   = $_POST['enddate'];
         $suitetype = $_POST['suitetype'];
 
-     
+        $booking = "INSERT INTO "
     }
 }
 

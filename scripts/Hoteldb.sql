@@ -4,16 +4,17 @@ USE HotelDB;
 
 CREATE TABLE CustomerAccount
 (
-    accountid INT AUTO_INCREMENT NOT NULL,
+    accountid INT NOT NULL,
     firstname VARCHAR(20) NOT NULL,
     lastname  VARCHAR(20) NOT NULL,
     email     VARCHAR(30) NOT NULL,
     gender    VARCHAR(6) NOT NULL ,
     dateofbirth DATE NOT NULL,
-    username  VARCHAR(10) NOT NULL,
+    username  VARCHAR(30) NOT NULL,
     password  VARCHAR(30) NOT NULL,
     telephone VARCHAR(10),
-    PRIMARY KEY(accountid);
+    PRIMARY KEY(accountid)
+);
 
 CREATE TABLE Reservation
 (
@@ -47,3 +48,6 @@ CREATE TABLE Room
     price decimal(10,2) NOT NULL,
     PRIMARY KEY(roomnum, roomtype)
 );
+
+
+INSERT INTO CustomerAccount VALUES (123, "BOB", "Brown", "123@db.com","Male", "2017-04-24", "12345", "67545336");

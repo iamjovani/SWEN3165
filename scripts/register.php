@@ -19,25 +19,26 @@ if ($conn->query($sql) === TRUE) {
     echo "Error creating database: " . $conn->error;
 }
 
-
-if(isset($_POST['finish']))
+if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
+    if(isset($_POST['finish']))
+    {
     
-    $firstname = $_POST['firstname'];
-    $lastname  = $_POST['lastname'];
-    $email     = $_POST['email'];
-    $account   = $_POST['accounttype'];
-    $country   = $_POST['country'];
-    $streetna  = $_POST['streetname'];
-    $streetnu  = $_POST['streetname'];
-
-    // Create database
-    $sql = "CREATE DATABASE HotelDB";
-    if ($conn->query($sql) === TRUE) {
-        echo "Database created successfully";
-    } else {
-       echo "Error creating database: " . $conn->error;
+        $lastname  = $_POST['lastname'];
+        $firstname = $_POST['firstname'];
+        $email     = $_POST['email'];
+        $streetna  = $_POST['streetname'];
+        $country   = $_POST['country'];
+        $streetnu  = $_POST['streetname'];
+    
+        // Create database
+        $sql = "CREATE DATABASE HotelDB";
+        if ($conn->query($sql) === TRUE) {
+            echo "Database created successfully";
+        } else {
+        echo "Error creating database: " . $conn->error;
+        }
     }
-    echo($firstname + $lastname);
 }
+
 ?>

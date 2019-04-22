@@ -1,16 +1,4 @@
 
-//testing code
-function Onclick()
-{
-    var firstname = document.getElementById("firstname").value;
-    var lastname = document.getElementById("lastname").value;
-
-    createDB();
-    alert(firstname +" "+ lastname);
-}
-
-
-
 function createDB()
 {
     $.ajax({
@@ -21,4 +9,6 @@ function createDB()
           alert(html);
         }
    });
+
+   alert("Done!")
 }

@@ -80,6 +80,15 @@ ul li.active a
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.button2
+{
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    background-color:grey;
+    transform: translate(-50%, -50%);
+
+}
 
 .btn
 {
@@ -90,8 +99,30 @@ ul li.active a
     transition: 0.6s ease;
 }
 
+.btn2
+{
+    border: 1px solid #fff;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    transition: 0.6s ease;
+}
+
+
 .btn:hover
 {
     background-color: #fff;
     color: #000;
+}
+.pic{
+     width: 1300px;
+     height: 500px;
+}
+.center{
+  text-align: center;
+}
+.text{
+  font-style: italic;
+  font-family: Century Gothic cursive;
+  color: grey;
 }

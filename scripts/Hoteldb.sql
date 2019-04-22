@@ -4,32 +4,16 @@ USE HotelDB;
 
 CREATE TABLE CustomerAccount
 (
-<<<<<<< HEAD
     accountid INT AUTO_INCREMENT NOT NULL,
     firstname VARCHAR(20) NOT NULL,
     lastname  VARCHAR(20) NOT NULL,
     email     VARCHAR(30) NOT NULL,
     gender    VARCHAR(6) NOT NULL ,
-    dateofbirth DATE,
+    dateofbirth DATE NOT NULL,
     username  VARCHAR(10) NOT NULL,
     password  VARCHAR(30) NOT NULL,
     telephone VARCHAR(10),
-
-    PRIMARY KEY(accountid)
-=======
-    /*accountid INT AUTO_INCREMENT NOT NULL,*/
-    firstname   VARCHAR(20), 
-    lastname    VARCHAR(20), 
-    email       VARCHAR(20),
-    gender      VARCHAR(6) ,
-    dateofbirth DATE,
-    pass        VARCHAR(30),
-    telephone   VARCHAR(10),
-    
-    /*PRIMARY KEY(accountid)*/
-    PRIMARY KEY(firstname, telephone)
->>>>>>> refs/remotes/origin/master
-);
+    PRIMARY KEY(accountid);
 
 CREATE TABLE Reservation
 (

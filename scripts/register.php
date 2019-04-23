@@ -3,6 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
+$dbname   = "HotelDB";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
@@ -20,11 +21,13 @@ if ($conn->multi_query($sql) === TRUE) {
     echo "Error creating database: " . $conn->error;
 }
 
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     if(isset($_POST['finish']))
     {
-    
+
         $lastname    = $_POST['lastname']; //check
         $firstname   = $_POST['firstname']; //check
         $email       = $_POST['email']; //check
@@ -34,21 +37,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         $gender      = $_POST['gender']; //check
         $pass    = $_POST['password']; //check
 
-        $sqlqrr = "INSERT INTO CustomerAccount (firstname, lastname, email, gender, dateofbirth, pass, telephone) 
-                   VALUES($firstname, $lastname, $email, $gender, $dateofbirth, $pass, $telephone)";
+        $sql = "INSERT INTO CustomerAccount VALUES (12, $firstname, $lastname, $email, $gender, $dateofbirth, $pass, $telephone)";
 
-
-        //ISSUE: CUSTOMERACCOUNT NOT BEING CREATED DUE TO 'Commands out of sync; you can't run this command now'
-
-        if ($conn->query($sqlqrr) === TRUE)
+        try
         {
-            echo("Account Created Successfully!");
-        }else
-        { echo "Fail To Create Account!". $conn->error;}
+        
+            $connect = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            // set the PDO error mode to exception
+            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            // use exec() because no results are returned
+            $connect->exec($sql);
+                echo "Account created successfully";
+        }
+        catch(PDOException $e)
+        {
+            echo $sql . "<br>" . $e->getMessage();
+        }
+
+        $connect = null;
     }
-
-
-    $conn->close();
 }
 
 ?>

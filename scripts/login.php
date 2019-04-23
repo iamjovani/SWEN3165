@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname  = "Hoteldb";
+$dbname  = "HotelDB";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         if(mysqli_num_rows($result) > 0)
         {
             echo 'Login Successful!';
+            header('Location:/booking.html');
         }else
         {
             echo 'Login Failed';

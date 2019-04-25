@@ -29,13 +29,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     if(isset($_POST['finish']))
     {
         $id = md5(microtime().rand());
+        $prompt_msg = "Account Created Successfully!";
 
         $sqll = "INSERT INTO CustomerAccount 
         VALUES ('$id','".$_POST['firstname']."', '".$_POST['lastname']."', '".$_POST['email']."', '".$_POST['gender']."', '".$_POST['dateofbirth']."', '".$_POST['username']."', '".$_POST['password']."', '".$_POST['telephone']."')";
 
         if ($conn->query($sqll)) {
-            echo "New record created successfully";
-            header('Location: ../login.html');
+           #echo "New record created successfully";
+           #header('Location: ../login.html');
+           echo "<script>
+                alert('Registration Successful!');
+                window.location.href='../login.html';
+                </script>";
          } else {
             echo "Error: " . $sqll . "" . mysqli_error($conn);
          }

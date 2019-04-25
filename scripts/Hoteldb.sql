@@ -28,9 +28,9 @@ CREATE TABLE Reservation
     numadults INT NOT NULL,
     numchildren INT NOT NULL,
 
-    cardnum INT NOT NULL,
+    cardnum VARCHAR(30) NOT NULL,
     CV INT NOT NULL,
-    ExpirationDate INT NOT NULL,
+    ExpirationDate DATE,
 
     PRIMARY KEY(accountid),
     FOREIGN KEY(accountid) REFERENCES CustomerAccount(accountid)

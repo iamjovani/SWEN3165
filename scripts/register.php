@@ -6,7 +6,7 @@ $password = "";
 $dbname   = "HotelDB";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -28,25 +28,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     if(isset($_POST['finish']))
     {
-
-        #while ($conn->more_results()) {$conn->next_result();}
-
         $id = md5(microtime().rand());
-        $lastname    = $_POST['lastname']; //check
-        $firstname   = $_POST['firstname']; //check
-        $email       = $_POST['email']; //check
-        $dateofbirth = strtotime($_POST['dateofbirth']); //check
-        $dateofbirth = date('Y-m-d', $dateofbirth);
-        $username    =$_POST['username'];
-        $telephone   = $_POST['telephone']; //check
-        $gender      = $_POST['gender']; //check
-        $pass    = $_POST['password']; //check
+        $prompt_msg = "Account Created Successfully!";
 
-        #INSERT INTO CustomerAccount VALUES (123, "BOB", "Brown","123@db.com","Male", "2017-04-24","Bobb", "12345", "67545336");
-        $sqll = "INSERT INTO CustomerAccount VALUES ($id, $firstname, $lastname, $email, $gender, $dateofbirth, $username, $pass, $telephone)";
+        $sqll = "INSERT INTO CustomerAccount 
+        VALUES ('$id','".$_POST['firstname']."', '".$_POST['lastname']."', '".$_POST['email']."', '".$_POST['gender']."', '".$_POST['dateofbirth']."', '".$_POST['username']."', '".$_POST['password']."', '".$_POST['telephone']."')";
 
         if ($conn->query($sqll)) {
-            echo "New record created successfully";
+           #echo "New record created successfully";
+           #header('Location: ../login.html');
+           echo "<script>
+                alert('Registration Successful!');
+                window.location.href='../login.html';
+                </script>";
          } else {
             echo "Error: " . $sqll . "" . mysqli_error($conn);
          }

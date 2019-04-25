@@ -4,7 +4,7 @@ USE HotelDB;
 
 CREATE TABLE CustomerAccount
 (
-    accountid INT NOT NULL,
+    accountid VARCHAR(50) NOT NULL,
     firstname VARCHAR(20) NOT NULL,
     lastname  VARCHAR(20) NOT NULL,
     email     VARCHAR(30) NOT NULL,
@@ -18,17 +18,25 @@ CREATE TABLE CustomerAccount
 
 CREATE TABLE Reservation
 (
-    accountid INT NOT NULL,
+    accountid VARCHAR(50) NOT NULL,
+    firstname VARCHAR(30),
+    lastname  VARCHAR(30),
+    email     VARCHAR(30),
     startdate DATE NOT NULL,
     enddate   DATE NOT NULL,
     bookingtype VARCHAR(30) NOT NULL,
     numadults INT NOT NULL,
     numchildren INT NOT NULL,
+
+    cardnum INT NOT NULL,
+    CV INT NOT NULL,
+    ExpirationDate INT NOT NULL,
+
     PRIMARY KEY(accountid),
     FOREIGN KEY(accountid) REFERENCES CustomerAccount(accountid)
-
 );
 
+/*
 CREATE TABLE CreditCard
 (
     accountid INT NOT NULL,
@@ -40,6 +48,7 @@ CREATE TABLE CreditCard
     FOREIGN KEY(accountid) REFERENCES CustomerAccount(accountid)
 );
 
+*/
 
 CREATE TABLE Room
 (
@@ -50,4 +59,16 @@ CREATE TABLE Room
 );
 
 
--- INSERT INTO CustomerAccount VALUES (123, "BOB", "Brown","123@db.com","Male", "2017-04-24","Bobb", "12345", "67545336");
+CREATE TABLE Adminuser
+(
+    adminid VARCHAR(10),
+    username VARCHAR(20),
+    password VARCHAR(20),
+    PRIMARY KEY(adminid)
+);
+
+INSERT INTO Adminuser VALUES ('ADMIN01', 'admin', 'admin');
+INSERT INTO Adminuser VALUES ('ADMIN02', 'admin', 'password');
+
+
+INSERT INTO CustomerAccount VALUES ("123", "BOB", "Brown","123@db.com","Male", "2017-04-24","Bobb", "12345", "67545336");

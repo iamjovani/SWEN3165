@@ -42,8 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
             
             if(mysqli_num_rows($accresult) > 0)
             {
-                //admin review panel here
-                echo "Good!";
+                include('adminpanel.php');
             }else
             {
                 echo "<script>

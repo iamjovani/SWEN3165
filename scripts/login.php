@@ -22,11 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
         $username  = $_POST['username'];
         $password  = $_POST['password'];
-        
+
 
         $result = mysqli_query($conn,"SELECT * FROM CustomerAccount WHERE username='" . $_POST["username"] .
                      "' and password = '". $_POST["password"]."'");
-        
+
         if(mysqli_num_rows($result) > 0)
         {
 
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         {
             $adminacc = "SELECT * FROM Adminuser WHERE username= '".$_POST["username"]."'";
             $accresult = mysqli_query($conn, $adminacc);
-            
+
             if(mysqli_num_rows($accresult) > 0)
             {
                 include('adminpanel.php');

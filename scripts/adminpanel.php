@@ -1,3 +1,7 @@
+<head>
+    <script type="text/javascript" src='admin.php'> </script>
+    <title>abc</title><meta charset="utf-8"/>
+</head>
 <div class="card">
   <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Reservations</h3>
   <div class="card-body">
@@ -45,6 +49,12 @@
         <?php endwhile; ?>
     </tbody>
 </table>
+
+<footer>
+    <a href="../home.html">Logout</a>
+</form>    
+</footer>
+
 
 <link rel="stylesheet" href="../assets/css/bootstrap.css" />
 <script src="../assets/js/jquery-2.2.4.min.js"></script>

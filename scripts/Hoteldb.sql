@@ -67,8 +67,8 @@ CREATE TABLE Adminuser
     PRIMARY KEY(adminid)
 );
 
-INSERT INTO Adminuser VALUES ('ADMIN01', 'admin', 'admin');
-INSERT INTO Adminuser VALUES ('ADMIN02', 'admin', 'password');
+INSERT INTO Adminuser VALUES ('ADMIN01', 'adminuser', 'admin12345');
+INSERT INTO Adminuser VALUES ('ADMIN02', 'adminuser', 'password123');
 
 
 INSERT INTO CustomerAccount VALUES ("123", "BOB", "Brown","123@db.com","Male", "2017-04-24","Bobb", "12345", "67545336");

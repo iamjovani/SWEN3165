@@ -23,6 +23,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         $admin     = "admin";
 
 
+        $suiteSelected = $_POST['suitetype'];
+        $suiteprice    = 0;
+        if($suiteSelected == "Penthouse")
+        {
+        $suiteprice = 15000;
+        }else if($suiteSelected == "Double Room")
+        {
+            $suiteprice = 12000;
+        }else if($suiteprice == "Family Suite")
+        {
+            $suiteprice = 13000;
+        }else if($suiteSelected = "Single Room")
+        {
+            $suiteprice = 8000;
+        }
+
+
         $getid  = "SELECT accountid WHERE firstname='$firstname' and lastname='$lastname'";
         $result = mysqli_query($conn, $getid); 
 
@@ -36,12 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
             echo "0 results";
          }
 
-<<<<<<< HEAD
         $booking = "INSERT INTO Reservation VALUES ('$id','$firstname', '$lastname', '".$_POST['email']."', '".$_POST['startdate']."', '".$_POST['enddate']."', '".$_POST['suitetype']."', '".$_POST['numadlts']."', '".$_POST['numchldrn']."', '".$_POST['AccountNumber']."', '".$_POST['CVC']."', '".$_POST['Expirationdate']."')";
-=======
-        $booking = "INSERT INTO Reservation
-        VALUES ('$id','$firstname', '$lastname', '".$_POST['email']."', '".$_POST['startdate']."', '".$_POST['enddate']."', '".$_POST['roomt']."', '".$_POST['numadlts']."', '".$_POST['numchldrn']."', '".$_POST['cardnum']."', '".$_POST['CVC']."', '".$_POST['expdate']."')";
->>>>>>> 001a71ef0bfd4908c5efc707af14c6acda404560
 
         if ($conn->query($booking)) 
         {

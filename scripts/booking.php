@@ -38,8 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
             echo "0 results";
          }
 
-        $booking = "INSERT INTO Reservation VALUES ()
-        VALUES ('$id','$firstname', '$lastname', '".$_POST['email']."', '".$_POST['startdate']."', '".$_POST['enddate']."', '".$_POST['suitetype']."', '".$_POST['numadlts']."', '".$_POST['numchldrn']."', '".$_POST['AccountNumber']."', '".$_POST['CVC']."', '".$_POST['Expirationdate']."')";
+        $booking = "INSERT INTO Reservation VALUES ('$id','$firstname', '$lastname', '".$_POST['email']."', '".$_POST['startdate']."', '".$_POST['enddate']."', '".$_POST['suitetype']."', '".$_POST['numadlts']."', '".$_POST['numchldrn']."', '".$_POST['AccountNumber']."', '".$_POST['CVC']."', '".$_POST['Expirationdate']."')";
 
         if ($conn->query($sqll))
         {

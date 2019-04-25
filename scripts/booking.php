@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         {
             echo "<script>
             alert('Booking Successful!');
-            window.location.href='../login.html';
+            window.location.href='../home2.html';
             </script>";
         }
         else

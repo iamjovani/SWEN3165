@@ -29,10 +29,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 
         if(mysqli_num_rows($result) > 0)
         {
-
+            /*
             echo "<script>
             alert('Registration Successful!');
             window.location.href='../booking.html';
+            </script>";
+            */
+            echo "<script>
+            alert('Registration Successful!');
+            window.location.href='../home2.html';
             </script>";
             #header('Location: ../booking.html');
         }else
@@ -42,13 +47,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 
             if(mysqli_num_rows($accresult) > 0)
             {
-                include('adminpanel.php');
+                echo "<script>
+                window.location.href='../home3.html';
+                </script>";
             }else
-            {
+            {  
                 echo "<script>
                 alert('Incorrect Username or password!');
                 window.location.href='../login.html';
                 </script>";
+                
             }
         }
     }

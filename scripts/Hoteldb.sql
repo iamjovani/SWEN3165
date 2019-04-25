@@ -4,7 +4,7 @@ USE HotelDB;
 
 CREATE TABLE CustomerAccount
 (
-    accountid INT NOT NULL,
+    accountid VARCHAR(50) NOT NULL,
     firstname VARCHAR(20) NOT NULL,
     lastname  VARCHAR(20) NOT NULL,
     email     VARCHAR(30) NOT NULL,
@@ -50,4 +50,4 @@ CREATE TABLE Room
 );
 
 
-INSERT INTO CustomerAccount VALUES (123, "BOB", "Brown","123@db.com","Male", "2017-04-24","Bobb", "12345", "67545336");
+INSERT INTO CustomerAccount VALUES ("123", "BOB", "Brown","123@db.com","Male", "2017-04-24","Bobb", "12345", "67545336");

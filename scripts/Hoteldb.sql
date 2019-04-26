@@ -4,7 +4,7 @@ USE HotelDB;
 
 CREATE TABLE CustomerAccount
 (
-    accountid VARCHAR(50) NOT NULL,
+    accountid VARCHAR(100) NOT NULL,
     firstname VARCHAR(20) NOT NULL,
     lastname  VARCHAR(20) NOT NULL,
     email     VARCHAR(30) NOT NULL,
@@ -18,6 +18,7 @@ CREATE TABLE CustomerAccount
 
 CREATE TABLE Reservation
 (
+    resid     VARCHAR(50) NOT NULL,
     accountid VARCHAR(50) NOT NULL,
     firstname VARCHAR(30),
     lastname  VARCHAR(30),
@@ -32,7 +33,7 @@ CREATE TABLE Reservation
     CV INT NOT NULL,
     ExpirationDate DATE,
 
-    PRIMARY KEY(accountid),
+    PRIMARY KEY(accountid, resid),
     FOREIGN KEY(accountid) REFERENCES CustomerAccount(accountid)
 );
 

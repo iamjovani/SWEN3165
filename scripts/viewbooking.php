@@ -25,8 +25,10 @@
 
     <tbody>
         <?php
+        $sessionid =file_get_contents('login.session', true);
+
         $conn = mysqli_connect("localhost", "root", "", "HotelDB");
-        $reuslt = mysqli_query($conn, "SELECT * FROM Reservation");
+        $reuslt = mysqli_query($conn, "SELECT * FROM Reservation WHERE accountid='$sessionid'");
 
         while ($row  = mysqli_fetch_assoc($reuslt)) :
         ?>

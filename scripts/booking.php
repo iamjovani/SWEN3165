@@ -17,31 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     if(isset($_POST['finish']))
     {
         $id = '';
-        $fullname  = explode(" ", $_POST['fullname']);
-        $firstname = $fullname[0];
-        $lastname  = $fullname[1];
+        $custmail = $_POST['email'];
+        $confirmpassword = $_POST['confirmpassword'];
         $admin     = "admin";
 
 
-        $suiteSelected = $_POST['suitetype'];
-        $suiteprice    = 0;
-        if($suiteSelected == "Penthouse")
-        {
-        $suiteprice = 15000;
-        }else if($suiteSelected == "Double Room")
-        {
-            $suiteprice = 12000;
-        }else if($suiteprice == "Family Suite")
-        {
-            $suiteprice = 13000;
-        }else if($suiteSelected = "Single Room")
-        {
-            $suiteprice = 8000;
-        }
-
-
-        $getid  = "SELECT accountid WHERE firstname='$firstname' and lastname='$lastname'";
-        $result = mysqli_query($conn, $getid); 
+        $result = mysqli_query($conn, "SELECT accountid FROM CustomerAccount WHERE email='$custmail' AND password='$confirmpassword'"); 
 
         if (mysqli_num_rows($result) > 0)
         {
@@ -53,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
             echo "0 results";
          }
 
-        $booking = "INSERT INTO Reservation VALUES ('$id','$firstname', '$lastname', '".$_POST['email']."', '".$_POST['startdate']."', '".$_POST['enddate']."', '".$_POST['suitetype']."', '".$_POST['numadlts']."', '".$_POST['numchldrn']."', '".$_POST['AccountNumber']."', '".$_POST['CVC']."', '".$_POST['Expirationdate']."')";
+        $booking = "INSERT INTO Reservation VALUES ('$id','".$_POST['firstname']."', '".$_POST['lastname']."', '".$_POST['email']."', '".$_POST['startdate']."', '".$_POST['enddate']."', 'Penthouse', '".$_POST['numadlts']."', '".$_POST['numchldrn']."', '".$_POST['AccountNumber']."', '".$_POST['CVC']."', '".$_POST['expdate']."')";
 
         if ($conn->query($booking)) 
         {
@@ -69,6 +50,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         $conn->close();
     }
 }
-
-
 ?>

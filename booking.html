@@ -25,6 +25,7 @@
 </head>
 
 <body>
+	include(booking.php)
 		<div class="image-container set-full-height" style="background-image: url('/assets/img/wizard-city.jpg')">
 	    <!--   Big container   -->
 	    <div class="container">
@@ -54,17 +55,18 @@
 		                            <div class="tab-pane" id="details">
 		                            	<div class="row">
 			                            	<div class="col-sm-12">
-			                                	<h4 class="info-text"> Let's start with the basic details.</h4>
+												<h4 class="info-text"> Let's start with the basic details.</h4>
+												<h4 class="info-text"> Booking email must match account email.</h4>
 			                            	</div>
 		                                	<div class="col-sm-6">
-												<div class="input-group">
-													<span class="input-group-addon">
-														<i class="material-icons"><!--icon goes here --></i>
-													</span>
-													<div class="form-group label-floating">
-			                                          	<label class="control-label">Your Full Name</label>
-			                                          	<input name="fullname" type="text" class="form-control">
-			                                        </div>
+													<div class="input-group">
+															<span class="input-group-addon">
+																<i class="material-icons"><!--icon goes here --></i>
+															</span>
+															<div class="form-group label-floating">
+																  <label class="control-label">First Name</label>
+																  <input name="firstname" type="text" class="form-control">
+															</div>
 												</div>
 
 												<div class="input-group">
@@ -87,6 +89,10 @@
                                                 </div>
 		                                	</div>
 		                                	<div class="col-sm-6">
+													<div class="form-group label-floating">
+															<label class="control-label">Last Name</label>
+															<input name="lastname" type="text" class="form-control">
+													  </div>
 		                                    	<div class="form-group label-floating">
 		                                        	<label class="control-label">Phone</label>
 													<input name="phone" type="tel" class="form-control">
@@ -99,8 +105,7 @@
                                                     <div class="form-group label-floating">
                                                             <label class="control-label">End Date</label>
                                                             <input name="enddate" type="date" class="form-control">
-                                                    </div>
-
+													</div>
 		                                    	</div>
                                             </div>
 		                            	</div>
@@ -134,7 +139,8 @@
 		                                                    <i class="material-icons">business</i>
 		                                                </div>
 		                                                <h6>Penthouse</h6>
-		                                            </div>
+													</div>
+													
 												</div>
 
 												<div class="col-sm-4">
@@ -151,7 +157,7 @@
 		                            </div>
 		                            <div class="tab-pane" id="description">
 		                                <div class="row">
-		                     <div class="col-sm-4">
+		                     <div class="col-sm-6">
 																 <div class="form-group label-floating">
 																			 <label class="control-label"> Name on Account</label>
 																			 <input name="NameonAccount" type="text" class="form-control">
@@ -168,7 +174,13 @@
 																				<label class="control-label">Expiration date</label>
 																				<input name="expdate" type="date" class="form-control">
 																 </div>
-					                          </div>
+
+															
+											  </div>
+											  <div class="col-sm-6" class="form-group label-floating">
+													<label class="control-label">Confirm Account Password</label>
+													<input name="confirmpassword" type="password" class="form-control">
+											 </div>
 		                            </div>
 		                        </div>
 	                        	<div class="wizard-footer">

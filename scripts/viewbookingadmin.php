@@ -19,7 +19,9 @@
             <th class="text-center">Type of Booking</th>
             <th class="text-center">Number of Children</th>
             <th class="text-center">Number of Adults</th>
-            
+            <th class="text-center">Remove</th>
+            <th class="text-center">Check-in</th>
+            <th class="text-center">Update</th>
         </tr>
     </thead>
 
@@ -43,6 +45,15 @@
             <td><?php echo $row['numadults']; ?></td>
             <td><?php echo $row['numchildren']; ?></td>
 
+          <td>
+            <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+          </td>
+          <td>
+            <span class="table-Checkin"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Check-in</button></span>
+          </td>
+          <td>
+            <span class="table-update"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Update</button></span>
+          </td>
         </tr>
 
         <?php endwhile; ?>

@@ -10,7 +10,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 
 #possible trade off
 /*
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         $id = md5(microtime().rand());
         $prompt_msg = "Account Created Successfully!";
 
-        $sqll = "INSERT INTO CustomerAccount 
+        $sqll = "INSERT INTO CustomerAccount
         VALUES ('$id','".$_POST['firstname']."', '".$_POST['lastname']."', '".$_POST['email']."', '".$_POST['gender']."', '".$_POST['dateofbirth']."', '".$_POST['username']."', '".$_POST['password']."', '".$_POST['telephone']."')";
 
         if ($conn->query($sqll)) {

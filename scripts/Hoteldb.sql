@@ -72,4 +72,4 @@ INSERT INTO Adminuser VALUES ('ADMIN01', 'adminuser', 'admin12345');
 INSERT INTO Adminuser VALUES ('ADMIN02', 'adminuser', 'password123');
 
 
-INSERT INTO CustomerAccount VALUES ("123", "BOB", "Brown","123@db.com","Male", "2017-04-24","Bobb", "12345", "67545336");
+INSERT INTO CustomerAccount VALUES ("123", "BOB", "Brown","123@db.com","Male", "2017-04-24","Bobb", "123456", "67545336");

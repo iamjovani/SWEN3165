@@ -19,7 +19,7 @@
             <th class="text-center">Type of Booking</th>
             <th class="text-center">Number of Children</th>
             <th class="text-center">Number of Adults</th>
-            <th class="text-center">Remove</th>
+            <th class="text-center">Check-out</th>
         </tr>
     </thead>
 
@@ -42,7 +42,7 @@
             <td><?php echo $row['numchildren']; ?></td>
 
           <td>
-            <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+            <span class="table-Checkout"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Check-out</button></span>
           </td>
         </tr>
 
@@ -52,7 +52,7 @@
 
 <footer>
     <a href="../home.html">Logout</a>
-</form>    
+</form>
 </footer>
 
 
@@ -101,7 +101,7 @@ $(this).parents('tr').detach();
 
 $('.table-up').click(function () {
 var $row = $(this).parents('tr');
-if ($row.index() === 1) return; 
+if ($row.index() === 1) return;
 $row.prev().before($row.get(0));
 });
 

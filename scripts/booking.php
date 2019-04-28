@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         $admin     = "admin";
         $resid     = $id = md5(microtime().rand());
 
-
-        $result = mysqli_query($conn, "SELECT accountid FROM CustomerAccount WHERE email='$custmail' AND password='$confirmpassword'"); 
+        
+        $result = mysqli_query($conn,"SELECT accountid FROM CustomerAccount WHERE email='$custmail' AND password='$confirmpassword'");
 
         if (mysqli_num_rows($result) > 0)
         {
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 
         $booking = "INSERT INTO Reservation VALUES ('$resid+$id', '$id','".$_POST['firstname']."', '".$_POST['lastname']."', '".$_POST['email']."', '".$_POST['startdate']."', '".$_POST['enddate']."', 'Penthouse', '".$_POST['numadlts']."', '".$_POST['numchldrn']."', '".$_POST['AccountNumber']."', '".$_POST['CVC']."', '".$_POST['expdate']."')";
 
-        if ($conn->query($booking)) 
+        if ($conn->query($booking))
         {
             echo "<script>
             alert('Booking Successful!');

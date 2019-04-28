@@ -17,8 +17,8 @@
             <th class="text-center">Start Date</th>
             <th class="text-center">End Date</th>
             <th class="text-center">Type of Booking</th>
-            <th class="text-center">Number of Children</th>
             <th class="text-center">Number of Adults</th>
+            <th class="text-center">Number of Children</th>
             <th class="text-center">Remove</th>
             <th class="text-center">Check-in</th>
             <th class="text-center">Update</th>
@@ -107,6 +107,15 @@ $TABLE.find('table').append($clone);
 
 $('.table-remove').click(function () {
 $(this).parents('tr').detach();
+});
+
+// confirm
+$('.table-checkin').click(function () {
+
+});
+
+$('.table-update').click(function () {
+
 });
 
 $('.table-up').click(function () {

@@ -17,8 +17,8 @@
             <th class="text-center">Start Date</th>
             <th class="text-center">End Date</th>
             <th class="text-center">Type of Booking</th>
-            <th class="text-center">Number of Children</th>
             <th class="text-center">Number of Adults</th>
+            <th class="text-center">Number of Children</th>
             <th class="text-center">Check-out</th>
         </tr>
     </thead>
@@ -95,8 +95,10 @@ var $clone = $TABLE.find('tr.hide').clone(true).removeClass('hide table-line');
 $TABLE.find('table').append($clone);
 });
 
-$('.table-remove').click(function () {
+$('.table-Checkout').click(function () {
+// new table became visible show cost.
 $(this).parents('tr').detach();
+
 });
 
 $('.table-up').click(function () {

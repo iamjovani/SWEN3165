@@ -17,9 +17,9 @@
             <th class="text-center">Start Date</th>
             <th class="text-center">End Date</th>
             <th class="text-center">Type of Booking</th>
-            <th class="text-center">Number of Children</th>
             <th class="text-center">Number of Adults</th>
-            
+            <th class="text-center">Number of Children</th>
+
         </tr>
     </thead>
 

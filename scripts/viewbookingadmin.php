@@ -19,18 +19,13 @@
             <th class="text-center">Type of Booking</th>
             <th class="text-center">Number of Adults</th>
             <th class="text-center">Number of Children</th>
-            <th class="text-center">Remove</th>
-            <th class="text-center">Check-in</th>
-            <th class="text-center">Update</th>
         </tr>
     </thead>
 
     <tbody>
         <?php
-        $sessionid =file_get_contents('login.session', true);
-
         $conn = mysqli_connect("localhost", "root", "", "HotelDB");
-        $reuslt = mysqli_query($conn, "SELECT * FROM Reservation WHERE accountid='$sessionid'");
+        $reuslt = mysqli_query($conn, "SELECT * FROM Reservation");
 
         while ($row  = mysqli_fetch_assoc($reuslt)) :
         ?>
@@ -45,15 +40,11 @@
             <td><?php echo $row['numadults']; ?></td>
             <td><?php echo $row['numchildren']; ?></td>
 
+          <!--
           <td>
-            <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+           <span class="table-Checkout"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Check-out</button></span>
           </td>
-          <td>
-            <span class="table-Checkin"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Check-in</button></span>
-          </td>
-          <td>
-            <span class="table-update"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Update</button></span>
-          </td>
+          -->
         </tr>
 
         <?php endwhile; ?>
@@ -105,16 +96,9 @@ var $clone = $TABLE.find('tr.hide').clone(true).removeClass('hide table-line');
 $TABLE.find('table').append($clone);
 });
 
-$('.table-remove').click(function () {
+$('.table-Checkout').click(function () {
+// new table became visible show cost.
 $(this).parents('tr').detach();
-});
-
-// confirm
-$('.table-checkin').click(function () {
-
-});
-
-$('.table-update').click(function () {
 
 });
 

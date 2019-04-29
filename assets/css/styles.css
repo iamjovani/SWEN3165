@@ -159,3 +159,9 @@ footer {
 .cotext{
   color: white;
 }
+
+.hide{
+  visibility: hidden;
+  display: none;
+  overflow: hidden;
+}

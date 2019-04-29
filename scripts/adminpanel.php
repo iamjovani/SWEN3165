@@ -1,6 +1,7 @@
 <head>
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
     <script type="text/javascript" src='admin.php'> </script>
-    <title>abc</title><meta charset="utf-8"/>
+    <title>Check out</title><meta charset="utf-8"/>
 </head>
 <div class="card">
   <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Reservations</h3>
@@ -49,7 +50,11 @@
         <?php endwhile; ?>
     </tbody>
 </table>
-
+<div class="hide" id="checkin">
+    <h4> Charges </h4> <br>
+    <img src="/assets/img/rep.jpg">
+    <span id="ok"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Paid</button></span> <br>
+</div>
 <footer>
     <a href="../home.html">Logout</a>
 </form>
@@ -97,8 +102,13 @@ $TABLE.find('table').append($clone);
 
 $('.table-Checkout').click(function () {
 // new table became visible show cost.
-$(this).parents('tr').detach();
+  var hide =document.getElementById("checkin");
+  hide.classList.remove("hide");
+});
 
+$('#ok').click(function () {
+  var hide =document.getElementById("checkin");
+  hide.classList.add("hide");
 });
 
 $('.table-up').click(function () {

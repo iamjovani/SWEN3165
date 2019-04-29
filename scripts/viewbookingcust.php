@@ -1,6 +1,8 @@
 <head>
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
     <script type="text/javascript" src='admin.php'> </script>
-    <title>abc</title><meta charset="utf-8"/>
+
+    <title>Check in</title><meta charset="utf-8"/>
 </head>
 <div class="card">
   <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Reservations</h3>
@@ -51,10 +53,13 @@
         <?php endwhile; ?>
     </tbody>
 </table>
-
+<div class="hide" id="checkin">
+    <p> Ok, i see you are still coming. What your new arrive time for your check-in ? </p>
+  	<input name="newtime" type="text" class="form-control" placeholder="Please enter the new time then date(if needed).eg; 10:00am dd/mm ">
+    <span id="ok"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Ok</button></span>
+</div>
 <footer>
     <a href="../home.html">Logout</a>
-</form>
 </footer>
 
 
@@ -92,13 +97,19 @@ var $TABLE = $('#table');
 var $BTN = $('#export-btn');
 var $EXPORT = $('#export');
 
-$('.table-add').click(function () {
+$('table-checkin').click(function () {
 var $clone = $TABLE.find('tr.hide').clone(true).removeClass('hide table-line');
 $TABLE.find('table').append($clone);
 });
 
 $('.table-checkin').click(function () {
+  var hide =document.getElementById("checkin");
+  hide.classList.remove("hide");
+});
 
+$('#ok').click(function () {
+  var hide =document.getElementById("checkin");
+  hide.classList.add("hide");
 });
 
 $('.table-up').click(function () {

@@ -1,6 +1,7 @@
 <head>
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
     <script type="text/javascript" src='admin.php'> </script>
-    <title>abc</title><meta charset="utf-8"/>
+    <title>Check in</title><meta charset="utf-8"/>
 </head>
 <div class="card">
   <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Reservations</h3>
@@ -19,6 +20,9 @@
             <th class="text-center">Type of Booking</th>
             <th class="text-center">Number of Adults</th>
             <th class="text-center">Number of Children</th>
+            <th class="text-center">Remove</th>
+            <th class="text-center">Check-in</th>
+            <th class="text-center">Update</th>
         </tr>
     </thead>
 
@@ -40,16 +44,65 @@
             <td><?php echo $row['numadults']; ?></td>
             <td><?php echo $row['numchildren']; ?></td>
 
-          <!--
-          <td>
-           <span class="table-Checkout"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Check-out</button></span>
-          </td>
-          -->
-        </tr>
 
+          <td>
+           <span class="table-Remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+          </td>
+
+          <td>
+            <span class="table-Checkin"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Check-in</button></span>
+          </td>
+          <td>
+            <span class="table-Update"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Update</button></span>
+          </td>
+
+        </tr>
+        <tr class="hide" id="update">
+            <td><input name="firstname" type="text" class="form-control" placeholder=""></td>
+            <td><input name="lastname" type="text" class="form-control" placeholder=""></td>
+            <td><input name="email" type="text" class="form-control" placeholder=""></td>
+            <td><input name="startdate" type="text" class="form-control" placeholder=""></td>
+            <td><input name="enddate" type="text" class="form-control" placeholder=""></td>
+            <td><input name="bookingtype" type="text" class="form-control" placeholder=""></td>
+            <td><input name="numadults" type="text" class="form-control" placeholder=""></td>
+            <td><input name="numchildren" type="text" class="form-control" placeholder=""></td>
+            <td><span id="done"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">done</button></span></td>
+         </tr>
         <?php endwhile; ?>
     </tbody>
 </table>
+<div class="hide" id="checkin">
+     <h4> Room which are available</h4>
+     <table class="table table-bordered table-responsive-md table-striped text-center">
+   <thead>
+       <tr>
+         <th class="text-center">Room Number</th>
+         <th class="text-center">Room type</th>
+         <th class="text-center">status</th>
+         <th class="text-center"> </th>
+
+       </tr>
+   </thead>
+
+   <tbody>
+     <?php
+     $conn = mysqli_connect("localhost", "root", "", "HotelDB");
+     $reuslt = mysqli_query($conn, "SELECT * FROM Room");
+
+     while ($row  = mysqli_fetch_assoc($reuslt)) :
+     ?>
+
+     <tr>
+         <td><?php echo $row['roomnum']; ?></td>
+         <td><?php echo $row['roomtype']; ?></td>
+         <td>Available</td>
+         <td><span><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">select</button></span></td>
+       </tr>
+      <?php endwhile; ?>
+    </tbody>
+  </table>
+<span id="ok"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">ok</button></span>
+</div>
 
 <footer>
     <a href="../home.html">Logout</a>
@@ -96,10 +149,29 @@ var $clone = $TABLE.find('tr.hide').clone(true).removeClass('hide table-line');
 $TABLE.find('table').append($clone);
 });
 
-$('.table-Checkout').click(function () {
-// new table became visible show cost.
+$('.table-Remove').click(function () {
 $(this).parents('tr').detach();
+});
 
+$('.table-Checkin').click(function () {
+  var hide =document.getElementById("checkin");
+  hide.classList.remove("hide");
+});
+
+$('#ok').click(function () {
+  var hide =document.getElementBy("checkin");
+  hide.classList.add("hide");
+});
+
+$('.table-Update').click(function () {
+    //$(this).parents('tr').remove("hide");
+    var hide =document.getElementBy("update");
+    hide.classList.remove("hide");
+});
+
+$('#done').click(function () {
+  var hide =document.getElementById("update");
+  hide.classList.add("hide");
 });
 
 $('.table-up').click(function () {
